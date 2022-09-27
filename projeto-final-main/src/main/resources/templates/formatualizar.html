@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Atualizar Evento</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<form method="POST" action="/evento/atualizar-evento" class="form" th:object="${evento}">
+    <div class="mb-3">
+        <label for="inputAtualizarEvento" class="form-label">Categoria do Evento</label>
+        <input type="text" class="form-control" name="categoria" id="categoria"th:value="${evento.categoria}">
+    </div>
+    <div class="mb-3">
+        <label for="inputAtualizarEvento" class="form-label">Nome do Show</label>
+        <input type="text" class="form-control" name="nome" id="nome"th:value="${evento.nome}">
+    </div>
+    <div class="mb-3">
+        <label for="inputAtualizarEvento" class="form-label">Local / Data / Hora</label>
+        <input type="text" class="form-control" name="localData" id="localData"th:value="${evento.localData}">
+    </div>
+    <div class="mb-3">
+        <label for="inputAtualizarEvento" class="form-label">Quantidade de Ingressos</label>
+        <input type="text" class="form-control" name="qtdIngressos" id="qtdIngressos"th:value="${evento.qtdIngressos}">
+    </div>
+    <div class="mb-3">
+        <label for="inputAtualizarEvento" class="form-label">Valor do Ingresso(R$)</label>
+        <input type="text" class="form-control" name="valorIngresso" id="valorIngresso"th:value="${evento.valorIngresso}">
+    </div>
+    <input type="hidden"  name="idEvento" id="idEvento" th:value="${evento.id}">
+    <button type="submit" class="btn btn-primary">Atualizar Evento</button>
+</form>
+<form method="GET" action="/listar/eventos" class="form">
+    <button type="submit" class="btn btn-primary">Voltar</button>
+</form>
+</body>
+</html>
