@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Evento</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<form method="POST" action="/cadastrar/usuario" class="form">
+    <div class="mb-3">
+        <label for="inputCadastrarUsuario" class="form-label">Email</label>
+        <input type="text" class="form-control" name="categoria" id="categoria">
+    </div>
+    <div class="mb-3">
+        <label for="inputCadastrarUsuario" class="form-label">Senha</label>
+        <input type="text" class="form-control" name="nome" id="nome">
+    </div>
+    <button type="submit" class="btn btn-primary">Cadastrar Usuário</button>
+</form>
+<form method="GET" action="/" class="form">
+    <button type="submit" class="btn btn-primary">Voltar</button>
+</form>
+</body>
+</html>

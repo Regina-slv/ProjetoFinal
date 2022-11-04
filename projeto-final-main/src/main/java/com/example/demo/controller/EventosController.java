@@ -41,6 +41,10 @@ public class EventosController {
     public ModelAndView formCadastrarEvento() {
         return new ModelAndView("formcadastrar");
     }
+    @GetMapping("/form/cadastrar/usuario")
+    public ModelAndView formCadastrarUsuario() {
+        return new ModelAndView("formcadastrarusuario");
+    }
 
     @GetMapping("/form/comprar-ingresso/{idEvento}")
     public ModelAndView formComprarIngresso(@PathVariable("idEvento") Long idEvento) {
@@ -108,6 +112,10 @@ public class EventosController {
     public String cadastrarEvento(CadastrarEventoRequest request) {
         eventoService.cadastrar(request.toEvento());
         return "redirect:/listar/eventos";
+    }
+    @PostMapping("/cadastrar/usuario")
+    public String cadastrarUsuario() {
+        return "redirect:/";
     }
 
     @PostMapping("/evento/comprar-ingresso")
